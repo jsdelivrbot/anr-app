@@ -5,10 +5,10 @@ import {API_URL} from './consts';
 import {userState} from './userstate';
 
 localforage.config({
-    name        : 'anr-app',
-    version     : 1.0,
-    storeName   : 'anr_app_data', // Should be alphanumeric, with underscores.
-    description : 'locally stored data'
+    name: 'anr-app',
+    version: 1.0,
+    storeName: 'anr_app_data', // Should be alphanumeric, with underscores.
+    description: 'locally stored data'
 });
 
 const reset = () => localforage.clear();
@@ -25,10 +25,12 @@ const get = resource => {
 };
 
 const getCards = () => {
-	const setsPromise = userState.sets
-	.map(code => localforage.getItem(`set/${code}`));
+	const getSet = code => localforage.getItem(`set/${code}`);
+	const setsPromise = userState.sets.map(getSet);
 	return Promise.all(setsPromise);
 };
+
+const getTags = () => localforage.getItem('tags');
 
 const del = resource => localforage.removeItem(resource);
 

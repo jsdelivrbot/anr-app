@@ -25,9 +25,10 @@ export default React.createClass({
 			.map(card => <Card key={card.code} info={card}/>)
 			.value();
 		const types = _(this.state.cards)
-		.map(card => card.type_code)
+		.map(card => card.subtype_code)
 		.uniq()
-		.value();
+		.value().toString();
+		console.log(types);
 
 		return (
 			<div>

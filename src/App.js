@@ -52,14 +52,14 @@ export default React.createClass({
                     <div className='columns'>
                         <div className='column is-quarter'>
                             <nav className='menu'>
-                            {sets}
+                                {sets}
                                 <div className='menu-block'>
                                     <button
                                         className='button is-danger is-fullwidth'
                                         onClick={reset}>
                                         {'RESET DATA'}
                                     </button>
-                                </div>
+                                    </div>
                             </nav>
                         </div>
                         <div className='column'>

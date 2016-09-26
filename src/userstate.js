@@ -6,7 +6,7 @@ import {del, get} from './api';
 
 let userState = observable({
 	sets: [], // sets the user has selected
-	cards: []
+	tags: []
 });
 
 function toggleSet(code) {
